@@ -464,6 +464,9 @@ internal object AioListener : IKernelMsgListener {
 
     }
 
+    override fun onGuildTopFeedUpdate(gProGuildTopFeedMsg: GProGuildTopFeedMsg?) {
+    }
+
     override fun onHitCsRelatedEmojiResult(downloadRelateEmojiResultInfo: DownloadRelateEmojiResultInfo?) {
 
     }
@@ -520,6 +523,9 @@ internal object AioListener : IKernelMsgListener {
 
     }
 
+    override fun onMsgWithRichLinkInfoUpdate(arrayList: ArrayList<MsgRecord>?) {
+    }
+
     override fun onNtFirstViewMsgSyncEnd() {
 
     }
@@ -544,12 +550,22 @@ internal object AioListener : IKernelMsgListener {
         LogCenter.log("onRecvUDCFlag($i2)", Level.DEBUG)
     }
 
+    override fun onRedTouchChanged() {
+        TODO("Not yet implemented")
+    }
+
     override fun onSendMsgError(j2: Long, contact: Contact?, i2: Int, str: String?) {
         LogCenter.log("onSendMsgError($j2, $contact, $j2, $str)", Level.DEBUG)
     }
 
-    override fun onSysMsgNotification(i2: Int, j2: Long, j3: Long, arrayList: ArrayList<Byte>?) {
-        LogCenter.log("onSysMsgNotification($i2, $j2, $j3, $arrayList)", Level.DEBUG)
+    override fun onSysMsgNotification(
+        i: Int,
+        j: Long,
+        j2: Long,
+        z: Boolean,
+        arrayList: ArrayList<Byte>?
+    ) {
+        LogCenter.log("onSysMsgNotification($i, $j, $j2, $z, $arrayList)", Level.DEBUG)
     }
 
     override fun onUnreadCntAfterFirstView(hashMap: HashMap<Int, ArrayList<UnreadCntInfo>>?) {
@@ -566,6 +582,10 @@ internal object AioListener : IKernelMsgListener {
 
     override fun onUserOnlineStatusChanged(z: Boolean) {
 
+    }
+
+    override fun onUserSecQualityChanged(queryUserSecQualityRsp: QueryUserSecQualityRsp?) {
+        TODO("Not yet implemented")
     }
 
     override fun onUserTabStatusChanged(arrayList: ArrayList<TabStatusInfo>?) {
