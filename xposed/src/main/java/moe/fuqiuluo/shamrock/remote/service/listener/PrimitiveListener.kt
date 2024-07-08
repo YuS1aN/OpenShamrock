@@ -200,6 +200,9 @@ internal object PrimitiveListener {
             }.decodeProtobuf<GroupCommonTipsEvent>()
         }
         val groupId = event.groupCode.toLong()
+        if (event.uniqueTitleChangeDetail == null) {
+            return
+        }
         val detail = event.uniqueTitleChangeDetail!!.first()
 
         //detail = if (detail[5] is ProtoList) {
